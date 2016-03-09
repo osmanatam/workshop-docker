@@ -23,13 +23,13 @@ Run `/usr/sbin/php5-fpm --nodaemonize` as the entrypoint.
 
 - start a container: `docker run [-it] [-d] [--rm] [-p <host-port>:<container-port>] [-v <host-volume:container-volume>] [-l <container-name>:<var-name>] --name <container-name> <tag-name> [cmd]`
 - run a command on a running container `docker exec <container-name> <cmd>`
+- start nginx linked with php-fpm with `docker-compose` (in `app` folder): `docker-compose up nginx-php`    
 - start nginx linked with php-fpm (in `app` folder):    
-  ```
-  docker run -d --name php-fpm -v $(pwd)/html:/var/www/html demo/php-fpm:latest
-  docker run -d --name nginx-php -v $(pwd)/config:/etc/nginx/conf.d -p 80:80 --link php-fpm:php  demo/nginx:latest
-  ```
-- start nginx linked with php-fpm with `docker-compose` (in `app` folder): `docker-compose up php`    
 
+```
+docker run -d --name php-fpm -v $(pwd)/html:/var/www/html demo/php-fpm:latest
+docker run -d --name nginx-php -v $(pwd)/config:/etc/nginx/conf.d -p 80:80 --link php-fpm:php  demo/nginx:latest
+```
 
 
 [kitematic]: https://kitematic.com/
