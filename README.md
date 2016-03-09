@@ -9,15 +9,14 @@ Note: install [kitematic][kitematic] on mac to have docker running inside a VM.
 
 ### nginx
 
-`nginx` exposed the port `80`.
-Run `/usr/sbin/nginx -c /etc/nginx/nginx.conf` as the entrypoint.
-
-Virtual host configuration can be mounted into `/etc/nginx/conf.d/`
+- `nginx` exposed on the port `80`.
+- Run `/usr/sbin/nginx -c /etc/nginx/nginx.conf` as the entrypoint.
+- Virtual host configuration can be mounted into `/etc/nginx/conf.d/`
 
 ### php-fpm
 
-`php-fpm` exposed on the port `9000`.
-Run `/usr/sbin/php5-fpm --nodaemonize` as the entrypoint.
+- `php-fpm` exposed on the port `9000`.
+- Run `/usr/sbin/php5-fpm --nodaemonize` as the entrypoint.
 
 ## Containers
 
