@@ -1,0 +1,14 @@
+php:
+  image: demo/php-fpm:latest
+  volumes:
+    - ./php/html:/var/www/html
+
+nginx-php:
+  image: demo/nginx:latest
+  links:
+    - php
+  ports:
+    - "80:80"
+  volumes:
+    - ./php/config:/etc/nginx/conf.d
+    - ./php/html:/var/www/html
